@@ -4,20 +4,38 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "dev": "nodemon",
+    "build": "rimraf ./build && tsc",
+    "start:prod": "npm run build && node build/index.js",
+    "lint": "eslint 'src/**/*.ts'"
   },
   "dependencies": {
-    "aws-sdk": "^2.390.0",
     "cors": "^2.8.5",
-    "dotenv": "^6.2.0",
+    "dotenv": "^8.2.0",
     "express": "^4.16.4",
-    "mongoose": "^5.4.5",
-    "morgan": "^1.9.1",
-    "multer": "^1.4.1",
-    "multer-s3": "^2.9.0"
+    "mongoose": "^5.4.5"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "@types/cors": "^2.8.6",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.6",
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.14",
+    "@typescript-eslint/eslint-plugin": "^3.2.0",
+    "@typescript-eslint/parser": "^3.2.0",
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.1.0",
+    "typescript": "^3.9.5"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
