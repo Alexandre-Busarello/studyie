@@ -2,12 +2,12 @@ import { getRepository } from 'typeorm';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 
-import { Login } from 'authentication/login';
-import { UserEntity } from 'database/models/user.entity';
-import { LoginEntity } from 'database/models/login.entity';
-import { LoginDto } from 'authentication/login/login.types';
-import { UserDto } from 'authentication/user/user.types';
-import jwtConfig from 'config/jwtConfig';
+import { Login } from '@app/authentication/login';
+import { UserEntity } from '@app/database/models/user.entity';
+import { LoginEntity } from '@app/database/models/login.entity';
+import { LoginDto } from '@app/authentication/login/login.types';
+import { UserDto } from '@app/authentication/user/user.types';
+import jwtConfig from '@app/config/jwtConfig';
 
 export class User {
   public static getUserRepository(): any {

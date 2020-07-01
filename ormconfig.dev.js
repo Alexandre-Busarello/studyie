@@ -9,8 +9,8 @@ module.exports = {
   synchronize: false,
   logging: false,
   keepConnectionAlive: true,
-  entities: ['build/**/*.entity.js'],
-  migrations: ['build/migration/**/*.js'],
+  entities: ['src/**/*.entity.ts'],
+  migrations: ['src/migration/**/*.ts'],
   cli: {
     entitiesDir: 'src',
     migrationsDir: 'src/migration',

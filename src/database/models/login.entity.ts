@@ -7,7 +7,7 @@ import {
   UpdateDateColumn,
   PrimaryGeneratedColumn
 } from 'typeorm';
-import { UserEntity } from 'database/models/user.entity';
+import { UserEntity } from '@app/database/models/user.entity';
 
 @Entity({name: "login"})
 export class LoginEntity {

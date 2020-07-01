@@ -2,8 +2,8 @@ import express, { Application } from 'express';
 import cors from 'cors';
 
 import mainRoutes from './routes';
-import signInRoutes from 'authentication/sign-in/routes';
-import signUpRoutes from 'authentication/sign-up/routes';
+import signInRoutes from '@app/authentication/sign-in/routes';
+import signUpRoutes from '@app/authentication/sign-up/routes';
 
 class WebServer {
   server: Application;

@@ -1,5 +1,5 @@
-import { UserEntity } from 'database/models/user.entity';
-import { UserRelationType } from 'authentication/user/user.types';
+import { UserEntity } from '@app/database/models/user.entity';
+import { UserRelationType } from '@app/authentication/user/user.types';
 
 export interface LoginDto {
   email: string;

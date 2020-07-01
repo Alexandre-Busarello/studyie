@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { FacebookConstants } from 'authentication/gateways/facebook/constants';
-import { HttpMethod } from 'common/enum/httpMethod.enum';
-import { UserEntity } from 'database/models/user.entity';
-import { UserDto } from 'authentication/user/user.types';
+import { FacebookConstants } from '@app/authentication/gateways/facebook/constants';
+import { HttpMethod } from '@app/common/enum/httpMethod.enum';
+import { UserEntity } from '@app/database/models/user.entity';
+import { UserDto } from '@app/authentication/user/user.types';
 
 export class FacebookGateway {
   public static async getUserProfile(accessToken: string): Promise<UserDto> {

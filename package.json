@@ -8,7 +8,7 @@
     "build": "rimraf ./build && tsc",
     "start:prod": "npm run build && node build/index.js",
     "lint": "eslint 'src/**/*.ts'",
-    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli"
+    "typeorm": "IS_TS_NODE=true ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -17,6 +17,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.1",
+    "module-alias": "^2.2.2",
     "mongoose": "^5.7.5",
     "pg": "^8.2.1",
     "typeorm": "^0.2.25"
@@ -40,10 +41,7 @@
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.9.5"
   },
-  "lint-staged": {
-    "*.ts": [
-      "eslint --fix",
-      "git add"
-    ]
+  "_moduleAliases": {
+    "@app": "./build"
   }
 }

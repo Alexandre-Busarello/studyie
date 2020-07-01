@@ -1,12 +1,12 @@
 import bcrypt from 'bcryptjs';
-import { UserEntity } from 'database/models/user.entity';
-import { LoginEntity } from 'database/models/login.entity';
-import { FacebookGateway } from 'authentication/gateways/facebook';
-import { User } from 'authentication/user';
-import { Login } from 'authentication/login';
-import { UserDto } from 'authentication/user/user.types';
-import { LoginDto } from 'authentication/login/login.types';
-import { LoginSuccessDto } from 'authentication/login/login.types';
+import { UserEntity } from '@app/database/models/user.entity';
+import { LoginEntity } from '@app/database/models/login.entity';
+import { FacebookGateway } from '@app/authentication/gateways/facebook';
+import { User } from '@app/authentication/user';
+import { Login } from '@app/authentication/login';
+import { UserDto } from '@app/authentication/user/user.types';
+import { LoginDto } from '@app/authentication/login/login.types';
+import { LoginSuccessDto } from '@app/authentication/login/login.types';
 
 interface AuthenticatedUser {
   user: User;

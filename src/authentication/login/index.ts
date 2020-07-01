@@ -2,10 +2,10 @@ import { getRepository } from 'typeorm';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 
-import { UserEntity } from 'database/models/user.entity';
-import { LoginEntity } from 'database/models/login.entity';
-import { LoginDto } from 'authentication/login/login.types';
-import jwtConfig from 'config/jwtConfig';
+import { UserEntity } from '@app/database/models/user.entity';
+import { LoginEntity } from '@app/database/models/login.entity';
+import { LoginDto } from '@app/authentication/login/login.types';
+import jwtConfig from '@app/config/jwtConfig';
 
 interface JwtPayload {
   userId: string;

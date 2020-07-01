@@ -1,6 +1,6 @@
-import { UserEntity } from 'database/models/user.entity';
-import { User } from 'authentication/user';
-import { SignUpDto } from 'authentication/sign-up/sign-up.types';
+import { UserEntity } from '@app/database/models/user.entity';
+import { User } from '@app/authentication/user';
+import { SignUpDto } from '@app/authentication/sign-up/sign-up.types';
 
 export class SignUp {
   public static async isEmailExists(email: string): Promise<boolean> {
