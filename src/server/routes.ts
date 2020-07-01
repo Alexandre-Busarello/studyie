@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
-const routes = Router();
+const router = Router();
 
-routes.get('/', async (req, res) => {
+router.get(`/${process.env.MAIN_DOMAIN}`, async (req, res) => {
   return res.json({ message: `It's alive. Date: ${new Date()}` });
 });
 
-export default routes;
+export default router;

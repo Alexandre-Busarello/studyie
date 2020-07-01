@@ -1,8 +1,9 @@
 import express, { Application } from 'express';
-// const mongoose = require("mongoose");
 import cors from 'cors';
 
-import routes from './routes';
+import mainRoutes from './routes';
+import signInRoutes from 'authentication/sign-in/routes';
+import signUpRoutes from 'authentication/sign-up/routes';
 
 class WebServer {
   server: Application;
@@ -15,7 +16,9 @@ class WebServer {
     this.server.use(cors());
     this.server.use(express.json());
     this.server.use(express.urlencoded({ extended: true }));
-    this.server.use(routes);
+    this.server.use(mainRoutes);
+    this.server.use(signInRoutes);
+    this.server.use(signUpRoutes);
 
     return this;
   }
