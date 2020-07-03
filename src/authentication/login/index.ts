@@ -30,7 +30,10 @@ export class Login {
   }
 
   public static generateToken(user: UserEntity): string {
-    const payload: JwtPayload = { userId: user.id?.toString(), email: user.email };
+    const payload: JwtPayload = {
+      userId: user.externalId?.toString() || user.id?.toString(),
+      email: user.email
+    };
 
     return jwt.sign(payload, jwtConfig.secret, {
       expiresIn: jwtConfig.expiresIn,
