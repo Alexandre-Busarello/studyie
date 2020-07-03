@@ -16,6 +16,9 @@ interface AuthenticatedUser {
 export class SignIn {
   public static async login(email: string, password: string): Promise<LoginSuccessDto> {
     const loginData: LoginEntity = await Login.findByEmail(email);
+    if (!loginData) {
+      return null;
+    }
     if (await bcrypt.compare(password, loginData.password)) {
       const user: UserEntity = await User.findByEmail(email);
       return {
