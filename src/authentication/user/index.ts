@@ -30,4 +30,8 @@ export class User {
   public static findByEmail(email: string): Promise<UserEntity> {
     return User.getUserRepository().findOne({ email });
   }
+
+  public static findByExternalId(externalId: string): Promise<UserEntity> {
+    return User.getUserRepository().findOne({ externalId });
+  }
 }

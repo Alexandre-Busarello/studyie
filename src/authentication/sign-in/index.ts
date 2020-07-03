@@ -38,7 +38,14 @@ export class SignIn {
   }
 
   public static async signInWithGoogle(googleUser: UserDto): Promise<AuthenticatedUser> {
-    console.log(googleUser);
+    const existsGoogleUser = await User.findByExternalId(googleUser.externalId);
+    if (existsGoogleUser) {
+      return {
+        user: existsGoogleUser,
+        token: Login.generateToken(existsGoogleUser),
+      };
+    }
+
     googleUser.isSocialLogin = true;
     const createdUser: UserEntity = await User.create(googleUser);
 

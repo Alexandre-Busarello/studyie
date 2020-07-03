@@ -20,10 +20,6 @@ router.post(`/${process.env.MAIN_DOMAIN}/signin/login`, async (req, res) => {
 });
 
 router.post(`/${process.env.MAIN_DOMAIN}/signin/google`, async (req, res) => {
-  if (await SignUp.isEmailExists(req.body.email)) {
-    return res.status(400).json({ message: 'Email already exists' });
-  }
-
   return res.json(await SignIn.signInWithGoogle(req.body));
 });
 
