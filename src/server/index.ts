@@ -24,7 +24,7 @@ class WebServer {
   }
 
   listen() {
-    const port = process.env.PORT || '3000';
+    const port = process.env.PORT || '4000';
     this.server.listen(port, () => console.info(`Server ready and listening on port ${port}`));
 
     return this;

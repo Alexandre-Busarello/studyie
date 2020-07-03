@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { SignUp } from '@app/authentication/sign-up'
 import { SignIn } from './index';
 
 const router = Router();
@@ -19,8 +20,11 @@ router.post(`/${process.env.MAIN_DOMAIN}/signin/login`, async (req, res) => {
 });
 
 router.post(`/${process.env.MAIN_DOMAIN}/signin/google`, async (req, res) => {
-  const { user } = req.body;
-  return res.json(await SignIn.signInWithGoogle(user));
+  if (await SignUp.isEmailExists(req.body.email)) {
+    return res.status(400).json({ message: 'Email already exists' });
+  }
+
+  return res.json(await SignIn.signInWithGoogle(req.body));
 });
 
 router.post(`/${process.env.MAIN_DOMAIN}/signin/facebook`, async (req, res) => {

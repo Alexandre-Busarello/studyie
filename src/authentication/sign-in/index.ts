@@ -38,6 +38,7 @@ export class SignIn {
   }
 
   public static async signInWithGoogle(googleUser: UserDto): Promise<AuthenticatedUser> {
+    console.log(googleUser);
     googleUser.isSocialLogin = true;
     const createdUser: UserEntity = await User.create(googleUser);
 

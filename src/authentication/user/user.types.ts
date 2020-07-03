@@ -5,7 +5,7 @@ export interface UserDto {
   lastName: string;
   email: string;
   password?: string;
-  isSocialLogin: boolean;
+  isSocialLogin?: boolean;
   pictureUrl?: string;
 }
 
