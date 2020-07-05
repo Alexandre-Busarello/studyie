@@ -4,6 +4,7 @@ import cors from 'cors';
 import mainRoutes from './routes';
 import signInRoutes from '@app/authentication/sign-in/routes';
 import signUpRoutes from '@app/authentication/sign-up/routes';
+import userRoutes from '@app/authentication/user/routes';
 
 class WebServer {
   server: Application;
@@ -19,6 +20,7 @@ class WebServer {
     this.server.use(mainRoutes);
     this.server.use(signInRoutes);
     this.server.use(signUpRoutes);
+    this.server.use(userRoutes);
 
     return this;
   }

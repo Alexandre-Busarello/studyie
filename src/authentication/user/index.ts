@@ -31,6 +31,10 @@ export class User {
     return User.getUserRepository().findOne({ email });
   }
 
+  public static findById(id: number): Promise<UserEntity> {
+    return User.getUserRepository().findOne(id);
+  }
+
   public static findByExternalId(externalId: string): Promise<UserEntity> {
     return User.getUserRepository().findOne({ externalId });
   }
