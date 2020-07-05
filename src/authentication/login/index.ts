@@ -9,6 +9,7 @@ import jwtConfig from '@app/config/jwtConfig';
 
 interface JwtPayload {
   userId: string;
+  name: string;
   email: string;
 }
 
@@ -32,6 +33,7 @@ export class Login {
   public static generateToken(user: UserEntity): string {
     const payload: JwtPayload = {
       userId: user.externalId?.toString() || user.id?.toString(),
+      name: `${user.firstName} ${user.lastName}`,
       email: user.email
     };
 
